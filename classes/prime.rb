@@ -17,7 +17,7 @@ class Prime
     loop do
       isPrime(i)
       break if @result.length == number
-      i+=1
+      i.even? ? i+=1 : i+=2
     end
     @result
   end
@@ -26,7 +26,7 @@ class Prime
 
   def isPrime(num)
     sqrt = Math.sqrt(num)
-    2.upto(sqrt)) do |i|
+    2.upto(sqrt) do |i|
       return if num % i == 0
     end
     @result << num

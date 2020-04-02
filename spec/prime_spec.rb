@@ -15,7 +15,7 @@ RSpec.describe Prime do
     end
 
     describe '.calculate_primes' do
-      context '> 2' do
+      context 'N > 2' do
         it 'should calculate the first N prime numbers' do
           result = Prime.new(6)
 
@@ -23,7 +23,7 @@ RSpec.describe Prime do
         end
       end
 
-      context '< 2' do
+      context 'N < 2' do
         it 'should calculate the first N prime numbers' do
           result = Prime.new(1)
 
