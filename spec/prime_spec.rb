@@ -16,6 +16,9 @@ RSpec.describe Prime do
 
     describe '.calculate_primes' do
       it 'should calculate the first N prime numbers' do
+        result = Prime.new(6)
+        
+        expect(result.calculate_primes).to eq([2, 3, 5, 7, 11, 13])
       end
     end
   end

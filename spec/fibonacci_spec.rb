@@ -19,6 +19,9 @@ RSpec.describe Fibonacci do
 
   describe '.calculate_fibonacci' do
     it 'should calculate the first N digits of the fibonacci sequence' do
+      result = Fibonacci.new(6)
+
+      expect(result.calculate_fibonacci).to eq([0, 1, 1, 2, 3, 5])
     end
   end
 
