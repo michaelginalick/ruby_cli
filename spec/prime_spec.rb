@@ -13,22 +13,22 @@ RSpec.describe Prime do
         expect { Prime.new(0) }.to raise_error { InvalidNumberError }
       end
     end
+  end
 
-    describe '.calculate_primes' do
-      context 'N > 2' do
-        it 'should calculate the first N prime numbers' do
-          result = Prime.new(6)
+  describe '.calculate_primes' do
+    context 'N > 2' do
+      it 'should calculate the first N prime numbers' do
+        result = Prime.new(6)
 
-          expect(result.calculate_primes).to eq([2, 3, 5, 7, 11, 13])
-        end
+        expect(result.calculate_primes).to eq([2, 3, 5, 7, 11, 13])
       end
+    end
 
-      context 'N < 2' do
-        it 'should calculate the first N prime numbers' do
-          result = Prime.new(1)
+    context 'N < 2' do
+      it 'should calculate the first N prime numbers' do
+        result = Prime.new(1)
 
-          expect(result.calculate_primes).to eq([])
-        end
+        expect(result.calculate_primes).to eq([])
       end
     end
   end
