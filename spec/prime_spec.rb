@@ -13,5 +13,10 @@ RSpec.describe Prime do
         expect { Prime.new(0) }.to raise_error { InvalidNumberError }
       end
     end
+
+    describe '.calculate_primes' do
+      it 'should calculate the first N prime numbers' do
+      end
+    end
   end
 end
