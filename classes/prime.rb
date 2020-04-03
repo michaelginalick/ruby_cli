@@ -1,6 +1,7 @@
 require_relative '../errors/invalid_number_error.rb'
 
 class Prime
+  FIRST_PRIME = 2
   attr_reader :max_primes
   attr_writer :result
   
@@ -11,8 +12,8 @@ class Prime
   end
 
   def calculate_primes
-    return @result if max_primes < 2
-    num = 2
+    return @result if max_primes < FIRST_PRIME
+    num = FIRST_PRIME
     
     loop do
       isPrime(num)
