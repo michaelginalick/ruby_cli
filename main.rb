@@ -14,7 +14,7 @@ OptionParser.new do |parser|
     puts parser
   end
 
-  parser.on("--prime", "--prime true", String, "Will calculate the number of primes.") do |prime|
+  parser.on("--prime", "--prime true", String, "Will also calculate the number of primes.") do |prime|
     options[:prime] = prime
   end
 
@@ -22,8 +22,8 @@ end.parse!
 
 if options[:help].nil?
   begin
-    arg = ARGV
-    raise InvalidNumberError.new("Please provide a valid number greater than 0") unless arg.length > 0 && arg[0].to_i > 0
+    args = ARGV
+    raise InvalidNumberError.new("Please provide a valid number greater than 0") unless args.length > 0 && args[0].to_i > 0
     GenerateSequences.new(arg[0].to_i, options[:prime]).generate
   rescue => exception
     puts "#{exception}"
