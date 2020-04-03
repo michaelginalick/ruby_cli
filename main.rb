@@ -12,7 +12,7 @@ OptionParser.new do |parser|
     puts parser
   end
 
-  parser.on("--prime", "--prime PRIME", String, "Will calculate the number of primes.") do |prime|
+  parser.on("--prime", "--prime true", String, "Will calculate the number of primes.") do |prime|
     options[:prime] = prime
   end
 
