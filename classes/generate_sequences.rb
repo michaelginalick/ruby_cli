@@ -1,6 +1,7 @@
 require 'pry'
-require_relative './prime.rb'
-require_relative './fibonacci.rb'
+require_relative './prime'
+require_relative './fibonacci'
+require_relative './format_output'
 
 class GenerateSequences
   
@@ -12,10 +13,8 @@ class GenerateSequences
   end
 
   def generate
-    fib = Fibonacci.new(max_sequence).calculate_fibonacci
-    if generate_primes?
-      primes = Prime.new(max_sequence).calculate_primes
-    end
+    return generate_both if generate_primes?
+    generate_one
   end
 
 
@@ -23,6 +22,17 @@ class GenerateSequences
 
   def generate_primes?
     generate_primes == "true" ? true : false
+  end
+
+  def generate_one
+    sequence = Fibonacci.new(max_sequence).calculate_fibonacci
+    puts FormatOutput.new("Fibonacci", sequence).format_sequence
+  end
+
+  def generate_both
+    generate_one
+    primes = Prime.new(max_sequence).calculate_primes
+    puts FormatOutput.new("Primes", primes).format_sequence
   end
 
 end
