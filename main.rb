@@ -1,9 +1,8 @@
-require 'pry'
 require 'optparse'
 require_relative './errors/invalid_number_error.rb'
 require_relative './classes/generate_sequences.rb'
 
-system "clear"
+system("clear")
 
 options = {}
 OptionParser.new do |parser|
@@ -24,7 +23,7 @@ if options[:help].nil?
   begin
     args = ARGV
     raise InvalidNumberError.new("Please provide a valid number greater than 0") unless args.length > 0 && args[0].to_i > 0
-    GenerateSequences.new(arg[0].to_i, options[:prime]).generate
+    GenerateSequences.new(args[0].to_i, options[:prime]).generate
   rescue => exception
     puts "#{exception}"
   end
